@@ -1,3 +1,8 @@
+"""
+First of all pip install 'phonenumbers' and 'opencage' 
+Enter the target phonenumber along with the country code to 'number' variable
+Enter the opencagedata.com API key to 'Key' variable
+"""
 import phonenumbers 
 from phonenumbers import geocoder
 from phonenumbers import carrier
@@ -6,14 +11,12 @@ import webbrowser
  
 from opencage.geocoder import OpenCageGeocode
  
-# Enter the phonenumber along with the country code
 number = "+905******235"
+
+Key = "6759620be********d32c9907b05"# ====>>> generate your api here https://opencagedata.com/api
 
 # Parsing the phonenumber (string) into phonenumber format
 phoneNumber = phonenumbers.parse(number)
-
-# Storing the API Key
-Key = "6759620be********d32c9907b05"# ====>>> generate your api here https://opencagedata.com/api
  
 # Using the geocoder module of phonenumbers to print the Location in console
 phoneServicingRegion = geocoder.description_for_valid_number(phoneNumber , "en")
